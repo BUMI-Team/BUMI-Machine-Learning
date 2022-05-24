@@ -1,0 +1,35 @@
+{
+    "num_user_dummy" : 50,
+    "tags":{
+        "column_name": [
+            "user_id",
+            "status",
+                "bidang_keahlian",
+                "hobi",
+                "modal_usaha",
+                "nama_usaha"
+            ],
+        "status": [
+            "udah_punya_usaha",
+            "belum_punya_usaha"
+            ], 
+        "bidang_keahlian": [
+            "kuliner",
+            "homecare",
+            "healtcare"
+            ],
+        "hobi" : [
+            "baca",
+            "olahraga",
+            "travelling",
+            "makan",
+            "membaca",
+            "nonton"
+        ],
+        "modal_usaha": [
+            "under_50",
+            "between_50_and_100",
+            "above_100"
+        ]
+    }
+}

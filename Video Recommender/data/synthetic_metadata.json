@@ -1,0 +1,14 @@
+{
+    "num_user_dummy" : 50,
+    "movies_column" : [
+        "movieId",
+        "title",
+        "genres"
+    ],
+    "ratings_column" : [
+        "userId",
+        "movieId",
+        "rating",
+        "timestamp"
+    ]
+}
