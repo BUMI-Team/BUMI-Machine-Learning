@@ -8,8 +8,7 @@ import json
 
 metadata_file       = 'Business Recommender\BUMI Business Recommender\synthetic_metadata.json'
 output_file         = "user_input.csv"
-jumlah_milih_maks_3 = random.randint(1,3)
-jumlah_milih_maks_5 = random.randint(1,5)
+
 
 def get_dataframe_metadata(name_file):
     with open(name_file) as f:
@@ -40,7 +39,13 @@ def generate_dummy():
         else:
             status= list_status[1]
             nama_usaha = ""
+        
+
         #Pilihan diacak kembali sesuai dengan ketentuan jumlah pilihan
+        
+        jumlah_milih_maks_3 = random.randint(1,3)
+        jumlah_milih_maks_5 = random.randint(1,5)
+        
         bidang_keahlian = random.sample(list_bidang_keahlian, jumlah_milih_maks_3)
         hobi            = random.sample(list_hobi, jumlah_milih_maks_5)
         modal_usaha     = random.choice(list_modal_usaha)

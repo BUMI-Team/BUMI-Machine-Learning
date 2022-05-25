@@ -15,8 +15,8 @@
             ], 
         "bidang_keahlian": [
             "kuliner",
-            "homecare",
-            "healtcare"
+            "rumah tangga",
+            "kesehatan"
             ],
         "hobi" : [
             "baca",
@@ -30,6 +30,15 @@
             "under_50",
             "between_50_and_100",
             "above_100"
+        ],
+        "nama_usaha":[
+
+        ],
+        "jenis_usaha":{
+
+        },
+        "deskripsi_tambahan":[
+            
         ]
     }
 }
