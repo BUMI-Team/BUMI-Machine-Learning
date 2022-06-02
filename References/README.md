@@ -1,1 +1,0 @@
-This folder contains several example of method by Mr.Spencer Pao, https://www.youtube.com/c/SpencerPaoHere

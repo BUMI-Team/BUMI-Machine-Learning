@@ -16,4 +16,5 @@ contoh: ratings_150.csv berarti terdapat 150 data rating dari user tergenerasi
 
 ## Movies
 Data ini dinamai "movies_<jumlah_data>.csv"
+
 contoh: movies_150.csv berarti terdapat 150 data movie yang ter-scrapped dan tersesuaikan
