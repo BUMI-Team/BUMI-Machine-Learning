@@ -77,7 +77,7 @@ def generate_dummy():
                 dummy_rating = random.randint(1,5)
                 data["user_id"].append(i)
                 data["movie_id"].append(movie_id_chosen)
-                data["rating"].append(dummy_rating)
+                data["rating"].append(float(dummy_rating))
                 timestamp = generate_user_rating_timestamp(time_stamp_list)
                 data["time_stamp"].append(time_stamp_list[-1])
             else:
@@ -88,7 +88,7 @@ def generate_dummy():
                     dummy_rating = random.randint(1,5)
                     data["user_id"].append(i)
                     data["movie_id"].append(movie_id_chosen)
-                    data["rating"].append(dummy_rating)
+                    data["rating"].append(float(dummy_rating))
                     timestamp = generate_user_rating_timestamp(time_stamp_list)
                     data["time_stamp"].append(time_stamp_list[-1])
 
@@ -101,7 +101,7 @@ def generate_dummy():
 
     print(df[:100])
     print()
-    output = dir+"/ratings_"+str(len(data["user_id"]))+".csv"
+    output = dir+"/ratings"+str(len(data["user_id"]))+".csv"
     df.to_csv(output, index = False)
     print("ratings csv generated!")
     pass
