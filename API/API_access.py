@@ -6,6 +6,6 @@ def jprint(obj):
     text = json.dumps(obj, sort_keys=True, indent=4)
     print(text)
     
-response = requests.get("http://127.0.0.1:5000/users")
+response = requests.get("http://127.0.0.1:5000/videos")
 print(response.status_code)
 jprint(response.json())
