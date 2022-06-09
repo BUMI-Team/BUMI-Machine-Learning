@@ -14,13 +14,13 @@ MAX_USER_RATING = 10                #Anggapan user paling banyak melakukan rate 
 
 
 
-def get_user_rating_attempt(dummy):
+def get_user_rating_attempt():
     userid_attempt =[]
-    for user_id in range(NUM_USER):
+    for user_id in range(1,NUM_USER+1):
         jumlah_user_rating = random.randint(MIN_USER_RATING,MAX_USER_RATING)
         # print(user_id," melakukan rate sebanyak :",jumlah_user_rating)
         userid_attempt.append(jumlah_user_rating)
-
+    # print("sasa",len(userid_attempt))
     return userid_attempt
 
 def generate_user_rating_timestamp(ts):
@@ -54,42 +54,42 @@ def generate_dummy():
 
     data = {
         "user_id": [],
-        "movie_id": [],
-        "rating": [],
+        "video_id": [],
         "time_stamp": []
     }
     time_stamp_list = []
 
     # print(time.time())
     print(dummy["num_user"])
-    dummy["rating_attempt_of_user_id"] =  get_user_rating_attempt(dummy)
+    dummy["rating_attempt_of_user_id"] =  get_user_rating_attempt()
     print("jumlah dummy seharusnya: ",sum(dummy["rating_attempt_of_user_id"]))
-
-    for i in range(NUM_USER):
+    print(dummy["rating_attempt_of_user_id"])
+    for i in range(1,NUM_USER+1):
+        # print(i)
         chosen = []
-        while (dummy["rating_attempt_of_user_id"][i]) > 0:
+        while (dummy["rating_attempt_of_user_id"][i-1]) > 0:
             # print(dummy["rating_attempt_of_user_id"][i])      
             if len(chosen) == 0:
-                dummy["rating_attempt_of_user_id"][i] -= 1
-                movie_id_chosen = random.randint(0,NUM_MOVIE)
-                chosen.append(movie_id_chosen)
+                dummy["rating_attempt_of_user_id"][i-1] -= 1
+                video_id_chosen = random.randint(1,NUM_MOVIE)
+                chosen.append(video_id_chosen)
 
-                dummy_rating = random.randint(1,5)
+                # dummy_rating = random.randint(1,5)
                 data["user_id"].append(i)
-                data["movie_id"].append(movie_id_chosen)
-                data["rating"].append(dummy_rating)
-                timestamp = generate_user_rating_timestamp(time_stamp_list)
+                data["video_id"].append(video_id_chosen)
+                # data["rating"].append(dummy_rating)
+                time_stamp_list = generate_user_rating_timestamp(time_stamp_list)
                 data["time_stamp"].append(time_stamp_list[-1])
             else:
-                movie_id_chosen = random.randint(0,NUM_MOVIE)
-                if movie_id_chosen not in chosen:
-                    dummy["rating_attempt_of_user_id"][i] -= 1
+                video_id_chosen = random.randint(1,NUM_MOVIE)
+                if video_id_chosen not in chosen:
+                    dummy["rating_attempt_of_user_id"][i-1] -= 1
 
-                    dummy_rating = float(random.randint(1,5))
+                    # dummy_rating = float(random.randint(1,5))
                     data["user_id"].append(i)
-                    data["movie_id"].append(movie_id_chosen)
-                    data["rating"].append(dummy_rating)
-                    timestamp = generate_user_rating_timestamp(time_stamp_list)
+                    data["video_id"].append(video_id_chosen)
+                    # data["rating"].append(dummy_rating)
+                    time_stamp_list = generate_user_rating_timestamp(time_stamp_list)
                     data["time_stamp"].append(time_stamp_list[-1])
 
     print("jumlah data dummmy setelah generated: ",len(data["user_id"]))
@@ -101,9 +101,10 @@ def generate_dummy():
 
     print(df[:100])
     print()
-    output = "ratings(1)_"+str(len(data["user_id"]))+".csv"
-    df.to_csv(output, index = False)
-    print("ratings csv generated!")
+    output = dir+"/user_history"+str(len(data["user_id"]))+".csv"
+    print(output)
+    df.to_csv(output, index = False, header =False)
+    print("user history csv generated!")
     pass
 
 def main():
