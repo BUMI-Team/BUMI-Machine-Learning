@@ -7,7 +7,7 @@ dir = "Video Recommender/BUMI Video Recommender/data"
 
 #Deklarasi Ketentuan Dummy Data
 NUM_USER = 20
-NUM_MOVIE = 200
+NUM_MOVIE = 1000
 MIN_USER_RATING = 3                 #Berarti minimal user watch dan nge-rate sebanyak 3 video
 MAX_USER_RATING = 10                #Anggapan user paling banyak melakukan rate & watch sebanyak 10x
 # MAX_USER_RATING = NUM_MOVIE       #Anggapan terdapat user yang menonton semua video
@@ -77,7 +77,7 @@ def generate_dummy():
                 dummy_rating = random.randint(1,5)
                 data["user_id"].append(i)
                 data["movie_id"].append(movie_id_chosen)
-                data["rating"].append(float(dummy_rating))
+                data["rating"].append(dummy_rating)
                 timestamp = generate_user_rating_timestamp(time_stamp_list)
                 data["time_stamp"].append(time_stamp_list[-1])
             else:
@@ -85,10 +85,10 @@ def generate_dummy():
                 if movie_id_chosen not in chosen:
                     dummy["rating_attempt_of_user_id"][i] -= 1
 
-                    dummy_rating = random.randint(1,5)
+                    dummy_rating = float(random.randint(1,5))
                     data["user_id"].append(i)
                     data["movie_id"].append(movie_id_chosen)
-                    data["rating"].append(float(dummy_rating))
+                    data["rating"].append(dummy_rating)
                     timestamp = generate_user_rating_timestamp(time_stamp_list)
                     data["time_stamp"].append(time_stamp_list[-1])
 
@@ -101,7 +101,7 @@ def generate_dummy():
 
     print(df[:100])
     print()
-    output = dir+"/ratings"+str(len(data["user_id"]))+".csv"
+    output = "ratings(1)_"+str(len(data["user_id"]))+".csv"
     df.to_csv(output, index = False)
     print("ratings csv generated!")
     pass
