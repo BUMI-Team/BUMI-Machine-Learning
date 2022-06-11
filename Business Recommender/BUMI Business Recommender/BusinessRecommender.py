@@ -13,7 +13,7 @@ update matrix
 rekomendasi
 
 """
-csv_location = "Business Recommender/BUMI Business Recommender/user_input.csv"
+csv_location = "Business Recommender\BUMI Business Recommender\BUMI_users_data.csv"
 users = {}
 user_meta_data = {
     "user_id":"",
@@ -138,15 +138,19 @@ def getRecommendation(user_id, deserved_users, num_recommendation):
     """
     rekomendasi_teratas = []
     # print(new_df.to_string())
+    # if user_id > len(deserved_users):
+    #     print("User id tidak ditemukan")
+    #     return 0
     if user_id not in deserved_users:
         print("Ganti nomor user yg belum punya usaha!")
     else:
         index = new_df[new_df["user_id"] == str(user_id)].index[0]
         similarityMatrix = getSimilarityMatrix()
-        # print(type(similarityMatrix))
+        print(index+1)
+        print((similarityMatrix))
         distance = similarityMatrix[index]
         userRank = sorted(list(enumerate(distance)), reverse = True, key = lambda x:x[1])
-        # print("Recommendation Ranking:\n",userRank)
+        print("Recommendation Ranking:\n",userRank)
 
         print("List Rekomendasi ", num_recommendation, " teratas:")
         count = 0
@@ -157,20 +161,22 @@ def getRecommendation(user_id, deserved_users, num_recommendation):
         the business from who have any business. The punya_usaha "true"
         will be skipped since they are not relevant to be recommended to the users
         """
-        # print("UR\n",userRank)
-        # print(users)
+        print("UR\n",userRank)
+        list_user = (list(users.keys()))
         for i in userRank:
             # print(i[0])
             ## User ID
-            if users[i[0]+1]["punya_usaha"] == True and user_id != str(i[0]+1) :
+            if users[list_user[i[0]]]["punya_usaha"] == True and user_id != str(list_user[i[0]]) :
                 rekomendasi_teratas.append(i)
                 count+=1
 
             if count >= num_recommendation:
                 break
-        # print(rekomendasi_teratas) 
+        print(rekomendasi_teratas) 
+        # print(users[user_id])
         for item in rekomendasi_teratas:
-            print(users[item[0]]["nama_usaha"])
+            # print(item[0])
+            print(users[list_user[item[0]]]["nama_usaha"])
 
 def main():
     global new_df,df, users
@@ -181,7 +187,7 @@ def main():
 
     print("Pilih salah 1 dari user ini")
     print(deserved_users)
-    getRecommendation(10000, deserved_users, 10)
+    getRecommendation("ycfqjQk3TvVCkXkhzi2jPNvdGZF2", deserved_users, 10)
 
 
 if __name__ == "__main__":

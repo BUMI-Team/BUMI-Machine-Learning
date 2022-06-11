@@ -1,5 +1,5 @@
 {
-    "num_user_dummy" : 50,
+    "num_user_dummy" : 10000,
     "tags":{
         "column_name": [
             "user_id",

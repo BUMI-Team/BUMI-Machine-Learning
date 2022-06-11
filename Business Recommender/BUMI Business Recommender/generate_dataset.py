@@ -59,7 +59,7 @@ def generate_dummy(proporsi):
 
 
 def main():
-    generate_dummy(proporsi = 40) #persentase yg udah punya usaha
+    generate_dummy(proporsi = 90) #persentase yg udah punya usaha
 
 
 if __name__ == "__main__":
