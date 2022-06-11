@@ -50,9 +50,8 @@ user_meta_data = {
 }
 
 #############################################################################################
-"""
-  FAST API INISIALIZATION
-"""
+# FAST API INISIALIZATION
+#############################################################################################
 app = FastAPI()
 
 
@@ -72,10 +71,10 @@ names = [
   'serving_default_context_movie_rating:0',
 ]
 indices = {i['name']: i['index'] for i in model.input_details}
+
 #############################################################################################
-"""
-	FIREBASE INIT
-"""
+# FIREBASE INISIALIZATION
+#############################################################################################
 config = {
     "apiKey": "AIzaSyCqHTbIfTWotR8LahossPvwwrbnIGPL6ws",
     "authDomain": "bumi-api-4e903.firebaseapp.com",
@@ -88,10 +87,10 @@ config = {
 firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 
+
 #############################################################################################
-"""
-  BUSINESS RECOMMENDATION
-"""
+# BUSINESS RECOMMENDATION
+#############################################################################################
 users={}
 def getData(db,route):
     for r in route:
@@ -275,7 +274,11 @@ def getRecommendation(user_id, deserved_users, num_recommendation):
 		returnData["rekomendasi"] = (list(set(rekomendasi)))
 		returnData["bidang_usaha"] = (list(set(bidang_usaha)))
 		return returnData
-#############################################################################################################################
+
+
+#############################################################################################
+# API PART
+#############################################################################################
 """
   API ROUTE
   /home
