@@ -1,17 +1,17 @@
 {
-    "num_user_dummy" : 50,
+    "num_user_dummy" : 10000,
     "tags":{
         "column_name": [
             "user_id",
-            "status",
-                "bidang_keahlian",
-                "hobi",
-                "modal_usaha",
-                "nama_usaha"
+            "punya_usaha",
+            "bidang_keahlian",
+            "hobi",
+            "modal_usaha",
+            "nama_usaha"
             ],
-        "status": [
-            "udah_punya_usaha",
-            "belum_punya_usaha"
+        "punya_usaha": [
+            "true",
+            "false"
             ], 
         "bidang_keahlian": [
             "kuliner",
@@ -23,7 +23,6 @@
             "olahraga",
             "travelling",
             "makan",
-            "membaca",
             "nonton"
         ],
         "modal_usaha": [

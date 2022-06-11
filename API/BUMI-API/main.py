@@ -1,9 +1,12 @@
 from uuid import uuid4
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
 from models import *
 import tensorflow as tf
+import pandas as pd
 import json
 """
+request user video recommendation:
 {
   "user_request": [
     "string"
@@ -18,8 +21,18 @@ import json
     1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0
   ]
 }
+output: "videoId YT, Judul, Deskripsi, Thumbnail"
+
+request user business recommendation:
+{
+  "user_id": int
+}
+output: list nama bisnis rekomendasi
+
 
 """
+VIDEO_DATA_LOCATION = "umkm283.csv"
+
 app = FastAPI()
 tflite_model_path = "model.tflite"
 # Create TFLite interpreter.
@@ -39,13 +52,9 @@ indices = {i['name']: i['index'] for i in model.input_details}
 
 @app.get("/")
 def root():
-    return {"message": [tf.constant(10)]}
+    return RedirectResponse("http://127.0.0.1:8000/docs")
 
-@app.get("/api/v1/users")
-async def fetch_users():
-    return
-
-@app.get("/api/v1/model")
+@app.get("/api/v1/modelinfo")
 def model_info():
     # info = {
     #     "input": model.input_details,
@@ -59,24 +68,38 @@ def model_info():
 
 @app.post("/api/v1/inference")
 def inference(data:Datas):
-    print(data)
-    ids = tf.constant(data.ids)
-    print(ids)
-    interpreter.set_tensor(indices[names[0]], ids)
-    genres = tf.constant(data.genres)
-    interpreter.set_tensor(indices[names[1]], genres)
-    ratings = tf.constant(data.ratings)
-    interpreter.set_tensor(indices[names[2]], ratings)
+	returnData = []
+	print(data)
+	ids = tf.constant(data.ids)
+	print(ids)
+	interpreter.set_tensor(indices[names[0]], ids)
+	genres = tf.constant(data.genres)
+	interpreter.set_tensor(indices[names[1]], genres)
+    # ratings = tf.constant(data.ratings)
+    # interpreter.set_tensor(indices[names[2]], ratings)
 
     # Run inference.
-    interpreter.invoke()
+	interpreter.invoke()
     # # Get outputs.
-    top_prediction_ids = interpreter.get_tensor(model.output_details[0]['index'])
-    top_prediction_scores = interpreter.get_tensor(model.output_details[1]['index'])
-    print('Predicted results:')
+	top_prediction_ids = interpreter.get_tensor(model.output_details[0]['index'])
+	top_prediction_scores = interpreter.get_tensor(model.output_details[1]['index'])
+	print('Predicted results:')
     # print('Top ids: {}'.format(top_prediction_ids))
-    print('Top scores: {}'.format(top_prediction_scores))
-    return 'List rekomendasi: {}'.format(top_prediction_scores)
+	print('Top scores: {}'.format(top_prediction_scores))
+
+	df = pd.read_csv(VIDEO_DATA_LOCATION)
+
+	print(df.to_string()) 
+
+	return 'List rekomendasi: {}'.format(top_prediction_scores)
+
+@app.post("/api/v1/bRecommendation")
+def bRecommendation(data: dataBRecommender):
+	print(dataBRecommender)
+	pass
+
+
+
 
 
 # @app.delete("/api/v1/users/{user_id}")

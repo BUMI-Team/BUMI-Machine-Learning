@@ -6,8 +6,8 @@ import csv
 from IPython.display import display
 import json
 
-metadata_file       = 'Business Recommender\BUMI Business Recommender\synthetic_metadata.json'
-output_file         = "user_input.csv"
+metadata_file       = 'Business Recommender/BUMI Business Recommender/synthetic_metadata.json'
+output_file         = "Business Recommender/BUMI Business Recommender/user_input.csv"
 
 
 def get_dataframe_metadata(name_file):
@@ -15,7 +15,7 @@ def get_dataframe_metadata(name_file):
         data = json.load(f, strict=False)
     return data
 
-def generate_dummy():
+def generate_dummy(proporsi):
     """
     Generate dummy data from metadata file atribute
     """
@@ -23,7 +23,7 @@ def generate_dummy():
     
     num_user_dummy          = metadata["num_user_dummy"]
     df_column               = metadata["tags"]["column_name"]
-    list_status             = metadata["tags"]["status"]
+    list_status             = metadata["tags"]["punya_usaha"]
     list_bidang_keahlian    = metadata["tags"]["bidang_keahlian"]
     list_hobi               = metadata["tags"]["hobi"]
     list_modal_usaha        = metadata["tags"]["modal_usaha"]
@@ -31,14 +31,14 @@ def generate_dummy():
     df = pandas.DataFrame(columns=df_column)
     count = 0
     
-    for i in range(num_user_dummy):
+    for i in range(1,num_user_dummy+1):
         user_id = i
-        if count < 40:
-            status= list_status[0]
+        if count < proporsi/100*num_user_dummy:
+            punya_usaha= list_status[0]
             nama_usaha = "nama_usaha-"+str(user_id)
         else:
-            status= list_status[1]
-            nama_usaha = ""
+            punya_usaha= list_status[1]
+            nama_usaha = "UNK"
         
 
         #Pilihan diacak kembali sesuai dengan ketentuan jumlah pilihan
@@ -50,7 +50,7 @@ def generate_dummy():
         hobi            = random.sample(list_hobi, jumlah_milih_maks_5)
         modal_usaha     = random.choice(list_modal_usaha)
 
-        df.loc[i] = [user_id,status,bidang_keahlian,hobi,modal_usaha,nama_usaha]
+        df.loc[i] = [user_id,punya_usaha,bidang_keahlian,hobi,modal_usaha,nama_usaha]
         count += 1
     df.to_csv(output_file, index = False)
     
@@ -59,7 +59,7 @@ def generate_dummy():
 
 
 def main():
-    generate_dummy()
+    generate_dummy(proporsi = 40) #persentase yg udah punya usaha
 
 
 if __name__ == "__main__":
