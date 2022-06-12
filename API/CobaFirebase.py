@@ -2,6 +2,7 @@ import pyrebase
 import pandas as pd
 import json
 
+
 NUM_USER = 10
 data_dir = "API/BUMI_users_data.csv"
 metadata_file = 'Business Recommender/BUMI Business Recommender/synthetic_metadata.json'
