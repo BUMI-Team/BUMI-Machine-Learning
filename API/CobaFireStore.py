@@ -14,30 +14,48 @@ db = firestore.client()
 users={}
 
 def extract_from_csv():
-    data = {}
-    df = pd.read_csv(data_dir, index_col=None)
-    records = df.to_dict(orient='records')
-    print(type(records))
-    for i in records:
-        user_id = i["user_id"]
-        punya_usaha = i["punya_usaha"]
-        bidang_keahlian = i["bidang_keahlian"]
-        hobi = i["hobi"]
-        modal_usaha = i["modal_usaha"]
-        nama_usaha = i["nama_usaha"]
+	data = {
+		"user_id":"",
+		"punya_usaha":False,
+		"bidang_keahlian" : [],
+		"hobi":[],
+		"modal_usaha":"",
+		"nama_usaha":""
+	}
+	df = pd.read_csv(data_dir, index_col=None)
+	records = df.to_dict(orient='records')
+	print(type(records))
+	for i in records:
+		data["user_id"] = ""
+		data["punya_usaha"] = False
+		data["bidang_keahlian"] = []
+		data["hobi"] = []
+		data["modal_usaha"] =""
+		data["nama_usaha"] = ""
 
-        data["user_id"] = user_id
-        data["punya_usaha"] = punya_usaha
-        data["bidang_keahlian"] = bidang_keahlian
-        data["hobi"] = hobi
-        data["modal_usaha"] = modal_usaha
-        data["nama_usaha"] = nama_usaha
-        print(data)
-        route =[
-            "users",
-            user_id
-        ]
-        pushData(db,route,data)
+
+
+		user_id = i["user_id"]
+		punya_usaha = i["punya_usaha"]
+		bidang_keahlian = i["bidang_keahlian"]
+		hobi = i["hobi"]
+		modal_usaha = i["modal_usaha"]
+		nama_usaha = i["nama_usaha"]
+
+		data["user_id"] = user_id
+		data["punya_usaha"] = punya_usaha
+		data["bidang_keahlian"].extend((bidang_keahlian.replace("[", "").replace("]", "").replace("'", "")).split(",")),
+		data["hobi"].extend((hobi.replace("[", "").replace("]", "").replace("'", "")).split(",")),
+		data["modal_usaha"] = modal_usaha
+		data["nama_usaha"] = nama_usaha
+
+		# print(((bidang_keahlian.replace("[", "").replace("]", "").replace("'", "")).split(",")))
+		print(data)
+		route =[
+		    "users",
+		    user_id
+		]
+		pushData(db,route,data)
 
 # Firestore
 def getData(db, route):
@@ -109,13 +127,13 @@ def extract_user_datas(df):
         list users
     """
     row = df.values.tolist()
-    print(row)
+    # print(row)
     for r in row:
         # print(r)
         user_meta_data = {
             "user_id":r[0],
-            "punya_usaha":r[1],
-            "bidang_keahlian":r[2],
+            "punya_usaha":r[1].replace("\"", "").replace("[", "").replace("]", "").replace("'", "").split(","),
+            "bidang_keahlian":r[2].replace("\"", "").replace("[", "").replace("]", "").replace("'", "").split(","),
             "hobi":r[3],
             "modal_usaha":r[4],
             "nama_usaha":r[5]
@@ -142,8 +160,20 @@ def get_users_who_deserved_list(users):
 	return deserved_users
 
 if __name__ == "__main__":
-    # extract_from_csv()
-    df,new_df,users = ETL()
-    print(users)
-    # deserved_users = get_users_who_deserved_list(users)
-    # getData()
+	# extract_from_csv()
+	# df,new_df,users = ETL()
+	# print(users)
+	# deserved_users = get_users_who_deserved_list(users)
+	# route = [
+	# 	"users"
+	# ]
+	# data = getData(db,route)
+	# print(data)
+	# df = pd.DataFrame(data, columns=["user_id","punya_usaha","bidang_keahlian","hobi","modal_usaha","nama_usaha"])
+	# print(df)
+	# df = df.sor
+	# df.to_csv("API/BUMI_users_data_v2.csv")
+
+	df = pd.read_csv("API/BUMI_users_data_v2.csv")
+	data = df.to_dict("records")
+	print(type(data[0]["punya_usaha"]))

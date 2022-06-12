@@ -43,7 +43,7 @@
 # }
 # output: list nama bisnis rekomendasi
 # """
-# VIDEO_DATA_LOCATION = "umkm283.csv"
+# #VIDEO_DATA_LOCATION = "umkm283.csv"
 # tflite_model_path = "model.tflite"
 # user_meta_data = {
 #     "user_id":"",
@@ -453,9 +453,9 @@ output: "videoId YT, Judul, Deskripsi, Thumbnail"
 }
 output: list nama bisnis rekomendasi
 """
-VIDEO_DATA_LOCATION = "umkm283.csv"
+# VIDEO_DATA_LOCATION = "umkm283.csv"
 tflite_model_path = "model.tflite"
-data_users_csv = "BUMI_users_data.csv"
+data_users_csv = "BUMI_users_data_v2.csv"
 user_meta_data = {
     "user_id":"",
     "punya_usaha":"",
@@ -677,9 +677,9 @@ def getRecommendation(user_id, deserved_users, num_recommendation):
 		rekomendasi = []
 
 		for item in rekomendasi_teratas:
-			# print(item[0])
+			# print((users[list_user[item[0]]]["bidang_keahlian"].replace("[","").replace("]","").replace("'","").replace(" ","").split(",")))
 			rekomendasi.extend((users[list_user[item[0]]]["nama_usaha"].replace("[","").replace("]","").replace("'","").split(",")))
-			bidang_usaha.extend((users[list_user[item[0]]]["bidang_keahlian"].replace("[","").replace("]","").replace("'","").split(",")))
+			bidang_usaha.extend((users[list_user[item[0]]]["bidang_keahlian"].replace("[","").replace("]","").replace("'","").replace(" ","").split(",")))
 		returnData["rekomendasi"] = (list(set(rekomendasi)))
 		returnData["bidang_usaha"] = (list(set(bidang_usaha)))
 		return returnData
