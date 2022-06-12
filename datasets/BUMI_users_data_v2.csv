@@ -1,0 +1,52 @@
+,user_id,punya_usaha,bidang_keahlian,hobi,modal_usaha,nama_usaha
+0,0uPD10jXDVcpc1xcW1AL44dJ0gX2,True,['kuliner'],['makan'],between_50_and_100,Bisnis Pecel Lele Lamongan
+1,1mETXRvfBpMs8Vvkk4dkbipB2xz1,True,['kuliner'],['makan'],between_50_and_100,Oleh-Oleh Kuliner Bandung
+2,3w06llxEz3Xg3FntfAkRMUurMRe2,False,"['kuliner', 'rumah tangga', 'kesehatan']","['olahraga', ' makan']",above_100,UNK
+3,6qnLRwWEymPtMDLQi4UZIZ7nKb53,True,['rumah tangga'],"['travelling', ' nonton']",under_50,Bisnis Peralatan Zero Waste
+4,72cAAF7aVUOO62TrhMHnve6d9fi2,True,"['kuliner', 'kesehatan']","['olahraga', ' nonton']",under_50,Bisnis Minuman Herbal
+5,7LdRVxYHFMQTDNuiYNCObsQLsQu2,True,['kesehatan'],"['baca', ' nonton', ' makan', ' travelling', ' olahraga']",under_50,Jual Masker Kesehatan
+6,7oGI0kIALjNMh3wTqzO6mlz7Jrx2,True,['kesehatan'],"['makan', ' travelling', ' baca', ' olahraga', ' nonton']",above_100,Toko Alat Kesehatan Bandung
+7,7psEz9ZUzLNLdM4BnO3s82A9q952,True,"['rumah tangga', 'kesehatan']","['travelling', ' nonton', ' olahraga']",above_100,Toko Alat Kesehatan Tokopedia
+8,9vF5qf6kQJVpfdw6vSxPgPc4vhW2,True,"['kuliner', 'kesehatan']",['baca'],between_50_and_100,Distributor Madu Hutan Bandung
+9,B4SOn0FKraUE559ckEQ321MoVK13,True,['rumah tangga'],"['baca', ' makan']",between_50_and_100,Supplier Gas LPG
+10,BFpupzQiCMeDHltfL1Z2qRUUzUa2,True,"['kuliner', 'kesehatan']","['travelling', ' olahraga', ' makan', ' baca', ' nonton']",under_50,Bisnis Katering Sehat
+11,BJV91tZRijXYhRwyB5wgCNGjmP22,True,['kesehatan'],"['baca', ' nonton', ' olahraga', ' travelling', ' makan']",under_50,Bisnis Scincare Termurah Bandung
+12,BZM4tqAGQ5grRoz12lg1XZVuOsw2,True,['kuliner'],"['travelling', ' nonton', ' olahraga', ' baca']",above_100,Bisnis Coffee Shop
+13,CN2pTnHYwcQQl9dpjbHKPlIqy853,True,['rumah tangga'],"['baca', ' makan']",under_50,Bisnis Sewa Baju Harian
+14,EI4H6vQBKCX24ieN0TIXhUxGwl83,True,"['rumah tangga', 'kesehatan']","['makan', ' nonton', ' travelling']",above_100,Galeri Medika Toko Alat Kesehatan Online
+15,FBkI7oKXtsSStGwViItD6xyRe2s2,True,['kesehatan'],"['olahraga', ' nonton']",above_100,Bisnis Toko Kosmetik
+16,GpVWzeMtRnhPhgppviP2wdDpxUl2,True,['kesehatan'],['olahraga'],above_100,Gilbert Medical
+17,HBN3alnEjEfmcAyEkkGKLKazG2d2,True,['rumah tangga'],"['travelling', ' olahraga', ' makan', ' baca']",under_50,Bisnis Kado Handmade
+18,Hcw98ye4DEUA3Ll8BYpZh1azEti1,True,['kuliner'],['travelling'],under_50,BIsnis Sambal Kemasan
+19,JXmV8xQj5SMAv9LiQsIeaUTrJgN2,True,['rumah tangga'],"['nonton', ' baca']",above_100,Bisnis Properti
+20,LJAdbxtfMzf7MdF9R1zqeJMRKGh1,True,"['rumah tangga', 'kesehatan']","['baca', ' makan', ' nonton', ' travelling']",under_50,Distributor Masker Scuba Cimahi
+21,NstakVZaBPhI1B8oQVlzQ1IVe6S2,True,['rumah tangga'],"['olahraga', ' travelling', ' nonton']",above_100,Bisnis Minimarket
+22,,true,"['Kuliner', 'Rumah Tangga']","['makan', 'ternak ayam']",under_50,ayam geprek
+23,QC5wTLhbLwX05OBMz3VqgPNdP4D3,True,['rumah tangga'],"['baca', ' nonton', ' olahraga']",between_50_and_100,Toko Mainan Cijerah
+24,QncCY6bB83Y8jWQzzXMrjI7vDTU2,True,['rumah tangga'],"['travelling', ' nonton', ' baca']",between_50_and_100,"Bisnis Fotokopi, ATK, dan Perjilidan"
+25,RqD0dtMLUkPakE8lpdDGH2QMyUj1,True,"['kuliner', 'rumah tangga']","['nonton', ' baca', ' olahraga', ' travelling', ' makan']",above_100,Ternak Ikan
+26,TAMilvsjcHREyiiau5DD8Vy0sz63,True,"['kuliner', 'kesehatan']","['olahraga', ' baca', ' nonton']",under_50,Bisnis Makanan Diet
+27,TOnWAvRxREaPVxHggr38e1Kktw93,True,['kuliner'],"['nonton', ' makan']",under_50,Bisnis Bakso
+28,TVZnEEhoKATT4ShFaRA3FHAVjpC2,True,['kesehatan'],"['baca', ' olahraga', ' nonton']",above_100,Medicalogy
+29,U9vTyBm5psVwCCJ2jn3nw9ub7gl2,False,"['kuliner', 'kesehatan']","['travelling', ' olahraga', ' nonton']",between_50_and_100,UNK
+30,UrZyV7vQLLW0kiCl0s07165gR3B2,True,"['rumah tangga', 'kesehatan']","['baca', ' travelling', ' olahraga', ' makan']",under_50,Bisnis Cuci Sepatu
+31,WkPVfn7uIyXnQAg5gfqqW6QQiNc2,True,['kuliner'],"['makan', ' olahraga', ' travelling', ' nonton', ' baca']",above_100,Rumah Makan Legoh
+32,XfboE48JkEXsB63bq4kJWz9nsDu2,True,['kuliner'],"['makan', ' travelling']",above_100,Rumah Makan Ayam Taliwang Yogyakarta
+33,ZdQ1Tfx3tudR0IsNJePUFAf13GY2,True,['kuliner'],"['travelling', ' olahraga', ' makan', ' baca', ' nonton']",above_100,Ayam Goreng Hisana
+34,aPbomASelYdAMFj9c9ifT1ZZMkX2,False,['kuliner'],"['baca', ' olahraga', ' travelling']",under_50,UNK
+35,aYJrc8On7wTj2ThCJOLfevj0hb43,True,['kuliner'],"['makan', ' travelling', ' nonton', ' olahraga', ' baca']",between_50_and_100,Bisnis Bakery
+36,anDO0XfzuogRBGprm7HkNRS0rWT2,True,['rumah tangga'],"['travelling', ' makan']",between_50_and_100,Bisnis Dekorasi Rumah
+37,bMgtTEnJOQZiwHuYdfHwvzIvNAx1,True,['kuliner'],"['baca', ' travelling', ' olahraga', ' nonton', ' makan']",under_50,Bisnis Sayuran Organik
+38,gjHRdwqQQlUDmndZKt41PMs9WWx2,True,['kesehatan'],"['travelling', ' makan']",above_100,Bisnis Obat Herbal
+39,jMMljtOq8iNVk1W94VaUvzyretj1,True,['rumah tangga'],['olahraga'],under_50,Toko Kelontong Online
+40,jhc0nPdkz4aLsq22XSW5sDHo8702,True,['rumah tangga'],"['makan', ' nonton', ' baca', ' olahraga', ' travelling']",above_100,Bisnis Laundry
+41,jrN3AglCa1adkoK4hYxPAlPK5tl1,True,['kuliner'],['nonton'],above_100,Warung Nasi Sunda
+42,juyoAAOyhYgreSS6ndZrooBRHqf1,True,"['rumah tangga', 'kesehatan']","['travelling', ' makan', ' nonton', ' olahraga', ' baca']",above_100,Mediacare (Media Homecare) Bandung
+43,kxE994hBIQMsrHVtdk1qIaHcE3W2,True,['kuliner'],"['nonton', ' baca', ' travelling', ' makan', ' olahraga']",between_50_and_100,Waralaba Makanan dan Minuman Instan
+44,qSEuSYW81deZ4JLPI64NBN6bRid2,True,['kuliner'],"['baca', ' nonton', ' makan', ' olahraga', ' travelling']",under_50,BIsnis Ayam Potong
+45,uVDPmwwc2AhGE3WTvPAeYZIzZ7h2,True,"['kuliner', 'rumah tangga', 'kesehatan']","['makan', ' nonton', ' baca']",between_50_and_100,Reseller Produk Original
+46,wu7KgceCQYc0ESoVZiGRnWJ2GyO2,False,"['rumah tangga', 'kesehatan']","['nonton', ' makan', ' travelling', ' baca']",between_50_and_100,UNK
+47,x2VsweUe9mPN2u4QMT8b5371qu43,True,['rumah tangga'],"['makan', ' nonton', ' baca', ' travelling', ' olahraga']",under_50,Bisnis Thrift Shop
+48,xgYXTQyoxVMRJ1nowzEXKdkHdeb2,True,['kuliner'],"['olahraga', ' baca', ' makan', ' travelling', ' nonton']",between_50_and_100,Bisnis Frozen Food
+49,ycfqjQk3TvVCkXkhzi2jPNvdGZF2,False,['kesehatan'],"['travelling', ' olahraga']",above_100,UNK
+50,z5rxznxCsiSpk7dP6R34llFf4PG2,True,['kuliner'],['nonton'],under_50,Kuliner Rumahan

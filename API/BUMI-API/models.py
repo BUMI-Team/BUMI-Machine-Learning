@@ -16,7 +16,5 @@ class Model(BaseModel):
 class Genre(BaseModel):
   genre: str
 
-#Format data untuk bisnis recommendation(Collaborative filtering)
 class dataBRecommender(BaseModel):
-    user_id: str
-
+  user_id: str
